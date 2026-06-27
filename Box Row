@@ -1,0 +1,32 @@
+from graphics import Canvas
+
+CANVAS_WIDTH = 400
+CANVAS_HEIGHT = 200
+N_BOXES = 5
+BOX_SIZE = CANVAS_WIDTH / N_BOXES
+
+def main():
+     canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
+     for i in range(N_BOXES):
+        # Calculate the top-left X coordinate dynamically for each step
+        x_start = i * BOX_SIZE
+        
+        # Calculate the Y coordinate so the box sits exactly at the canvas bottom
+        y_start = CANVAS_HEIGHT - BOX_SIZE
+        
+        # Determine the bottom-right coordinates
+        x_end = x_start + BOX_SIZE
+        y_end = CANVAS_HEIGHT
+        
+        # Render the box on the canvas
+        canvas.create_rectangle(x_start, y_start, x_end, y_end, 'white', 'black')
+
+
+
+
+
+# There is no need to edit code beyond this point
+
+if __name__ == '__main__':
+    main()
+    
