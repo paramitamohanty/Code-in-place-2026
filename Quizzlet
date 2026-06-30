@@ -1,0 +1,42 @@
+def main():
+    translations = {
+        "hello": "hola",
+        "dog": "perro",
+        "cat": "gato",
+        "well": "bien",
+        "us": "nos",
+        "nothing": "nada",
+        "house": "casa",
+        "time": "tiempo"
+    }
+    
+    correct_count = 0
+    total_questions = len(translations)
+    
+    
+    # 3. Loop through each term and translation using .items()
+    for english_word, spanish_word in translations.items():
+        # Prompt the user for their answer
+        user_answer = input(f"What is the Spanish translation for {english_word}? ")
+        
+        # Strip whitespace and convert to lowercase to catch formatting errors
+        user_answer = user_answer.strip().lower()
+        
+        # 4. Check if the answer matches the dictionary value
+        if user_answer == spanish_word.lower():
+            print("That is correct!")
+            correct_count += 1
+        else:
+            print(f"That is incorrect, the Spanish translation for {english_word} is {spanish_word}.")
+            
+        print()  # Prints an empty line for clean formatting
+        
+    # 5. Display the final results to the user
+   
+    print(f"You got {correct_count}/{total_questions} words correct, come study again soon!")
+
+
+
+
+if __name__ == '__main__':
+    main()
